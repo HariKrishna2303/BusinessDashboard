@@ -5,7 +5,7 @@ export default function BusinessCard() {
 
   const regenerateHeadline = async () => {
     const res = await fetch(
-      `http://localhost:4000/regenerate-headline?name=${businessData.name}&location=${businessData.location}`
+      `https://businessdashboard-ph2g.onrender.com/regenerate-headline?name=${businessData.name}&location=${businessData.location}`
     );
     const data = await res.json();
     setBusinessData((prev) => ({ ...prev, headline: data.headline }));

@@ -12,11 +12,14 @@ export default function BusinessForm() {
     if (!name || !location) return setError("All fields are required");
     setError("");
     setLoading(true);
-    const res = await fetch("http://localhost:4000/business-data", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, location }),
-    });
+    const res = await fetch(
+      "https://businessdashboard-ph2g.onrender.com/business-data",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, location }),
+      }
+    );
     const data = await res.json();
     setBusinessData(data);
     setLoading(false);

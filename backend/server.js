@@ -1,8 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://business-dashboard-iota.vercel.app",
+  })
+);
 app.use(express.json());
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const sampleHeadlines = [
   "Why {{name}} is {{location}}'s Favorite Local Gem",
@@ -54,5 +61,3 @@ app.get("/regenerate-headline", (req, res) => {
   const { name, location } = req.query;
   res.json({ headline: generateHeadline(name, location) });
 });
-
-app.listen(4000, () => console.log("Server running on http://localhost:4000"));
