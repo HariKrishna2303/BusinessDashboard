@@ -26,6 +26,18 @@ mini-local-business-dashboard/
 
 ---
 
+## Run the Backend
+
+- cd backend
+- npm install
+- node server.js
+
+## Run the Frontend
+
+- cd ../frontend
+- npm install
+- npm run dev/npm start
+
 ## 🌐 API Endpoints
 
 - POST /business-data
