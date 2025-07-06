@@ -21,7 +21,7 @@ export default function BusinessCard() {
       </p>
       <p className="mt-2 italic">"{businessData.headline}"</p>
       <button
-        className="mt-4 bg-green-600 text-white py-1 px-3 rounded"
+        className="mt-4 bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded font-semibold"
         onClick={regenerateHeadline}
       >
         Regenerate SEO Headline
